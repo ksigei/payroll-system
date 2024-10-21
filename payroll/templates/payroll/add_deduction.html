@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="my-4">Add Deduction for {{ employee.first_name }} {{ employee.last_name }} <i class="uil uil-minus-circle"></i></h2>
+
+<form method="post" class="row g-3">
+    {% csrf_token %}
+    <div class="col-md-6">
+        <label for="deduction_type" class="form-label">Deduction Type</label>
+        {{ form.deduction_type }}
+    </div>
+    <div class="col-md-6">
+        <label for="amount" class="form-label">Amount</label>
+        {{ form.amount }}
+    </div>
+    <div class="col-md-6">
+        <label for="date" class="form-label">Date</label>
+        {{ form.date }}
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-warning">
+            <i class="uil uil-minus-circle"></i> Save Deduction
+        </button>
+    </div>
+</form>
+{% endblock %}

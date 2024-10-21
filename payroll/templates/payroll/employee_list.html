@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="my-4">Employee List <i class="uil uil-users-alt"></i></h2>
+<div class="table-responsive">
+    <table class="table table-hover table-striped align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Department</th>
+                <th scope="col" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.first_name }} {{ employee.last_name }}</td>
+                <td>{{ employee.position }}</td>
+                <td>{{ employee.department }}</td>
+                <td class="text-center">
+                    <a href="{% url 'employee_salary' employee.id %}" class="btn btn-primary btn-sm">
+                        <i class="uil uil-file-alt"></i> View Salary
+                    </a>
+                    <a href="{% url 'add_salary' employee.id %}" class="btn btn-success btn-sm">
+                        <i class="uil uil-plus-circle"></i> Add Salary
+                    </a>
+                    <a href="{% url 'add_deduction' employee.id %}" class="btn btn-warning btn-sm">
+                        <i class="uil uil-minus-circle"></i> Add Deduction
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

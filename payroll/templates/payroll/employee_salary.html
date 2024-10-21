@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="my-4">{{ employee.first_name }} {{ employee.last_name }}'s Salary Details <i class="uil uil-money-bill"></i></h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                Salary History
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for salary in salaries %}
+                    <li class="list-group-item">
+                        <strong>Payment Date:</strong> {{ salary.payment_date }} <br>
+                        <strong>Base Salary:</strong> {{ salary.base_salary }} <br>
+                        <strong>Bonuses:</strong> {{ salary.bonuses }} <br>
+                        <strong>Allowances:</strong> {{ salary.allowances }} <br>
+                        <strong>Deductions:</strong> {{ salary.deductions }} <br>
+                        <strong>Net Salary:</strong> {{ salary.net_salary }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{% url 'add_salary' employee.id %}" class="btn btn-success">
+        <i class="uil uil-plus-circle"></i> Add Salary
+    </a>
+    <a href="{% url 'add_deduction' employee.id %}" class="btn btn-warning">
+        <i class="uil uil-minus-circle"></i> Add Deduction
+    </a>
+</div>
+{% endblock %}

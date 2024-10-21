@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+    }
+    
+    .card-title {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+</style>
+<div class="container mt-5">
+    <h2 class="text-center my-4 text-primary">Dashboard</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Total Salaries</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-success">Kes. {{ total_salaries }}</h5>
+                    <p class="card-text">Total salaries paid to employees.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-lg border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0">Total Deductions</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Kes. {{ total_deductions }}</h5>
+                    <p class="card-text">Total deductions made from salaries.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4">
+            <div class="card shadow-lg border-info">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">Total Employees</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-info">{{ total_employees }}</h5>
+                    <p class="card-text">Total number of employees in the system.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4">
+            <div class="card shadow-lg border-secondary">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0">Net Salary</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Kes. {{ net_salary }}</h5>
+                    <p class="card-text">Total net salary after deductions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

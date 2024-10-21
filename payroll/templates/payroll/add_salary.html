@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="my-4">Add Salary for {{ employee.first_name }} {{ employee.last_name }} <i class="uil uil-plus-circle"></i></h2>
+
+<form method="post" class="row g-3">
+    {% csrf_token %}
+    <div class="col-md-6">
+        <label for="base_salary" class="form-label">Base Salary</label>
+        {{ form.base_salary }} <!-- Removed as_crispy_field -->
+    </div>
+    <div class="col-md-6">
+        <label for="bonuses" class="form-label">Bonuses</label>
+        {{ form.bonuses }} <!-- Removed as_crispy_field -->
+    </div>
+    <div class="col-md-6">
+        <label for="allowances" class="form-label">Allowances</label>
+        {{ form.allowances }} <!-- Removed as_crispy_field -->
+    </div>
+    <div class="col-md-6">
+        <label for="deductions" class="form-label">Deductions</label>
+        {{ form.deductions }} <!-- Removed as_crispy_field -->
+    </div>
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}
