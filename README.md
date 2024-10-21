@@ -79,11 +79,30 @@ The Payroll System is a web application designed to manage employee salaries, de
 
 ## Usage
 
-- **Admin Panel**: Access the admin panel by navigating to `http://127.0.0.1:8000/admin/` and log in with the superuser credentials you created.
+- **Admin Panel**: Access the admin panel by navigating to `http://127.0.0.1:8000/admin/` and log in with the superuser credentials you created. (usernmae: admin, pw: 1234)
+
 - **Dashboard**: View the dashboard for an overview of total salaries, deductions, net salary, and total employees.
 - **Employee Management**: Add, update, or remove employee records.
 - **Salary Management**: Add salary details, bonuses, and deductions for each employee.
 
+## Screenshots
+
+### Dashboard
+![Dashboard Screenshot](./screenshots/1.jpeg)
+*Overview of total salaries, deductions, net salary, and total employees.*
+
+### Employee Management
+![Employee Management Screenshot](./screenshots/2.jpeg)
+*Manage employee details including addition, updates, and deletions.*
+
+![Salary Management Screenshot](./screenshots/3.jpeg)
+*Add and manage salaries, bonuses, and deductions for employees.*
+
+![Salary Management Screenshot](./screenshots/4.jpeg)
+
+![Salary Management Screenshot](./screenshots/5.jpeg)
+
+![Salary Management Screenshot](./screenshots/6.jpeg)
 ## Contributing
 
 Contributions are welcome! If you'd like to contribute to the project, please follow these steps:
@@ -102,4 +121,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - **Django**: The web framework used to build this application.
 - **Bootstrap**: For the responsive design and styling components.
-
